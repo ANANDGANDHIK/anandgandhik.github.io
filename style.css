@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+#loadingScreen {
+    position: absolute;
+    width: 100%; /* viewport width */
+    height: 100dvh; /* viewport height */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* This is for the loading.gif */
+}
+
+#goButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3; /* This will place the 'Go' button above all the elements */
+}
+
+#hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0; /* This will place the hud below the loading.gif */
+}
+#hudAds {
+  position: fixed;
+  top: 100%;
+  left: 100%;
+  transform: translate(-100%, -100%);
+  opacity: 0.5; /* Adjust this value to change the transparency */
+  width: 100%; /* Adjust this value to change the scale */
+  height: auto;
+  display: none;
+}
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* This will place the loading circle above the loading.gif and below the 'Go' button */
+}
+
+
+.loading .circle {
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+    opacity: 0;
+    animation-iteration-count: infinite;
+    animation-duration: 1.75s;
+    animation-direction: foward;
+    animation-timing-function: ease-out;
+    z-index: 2; /* Add this */
+}
+
+  .loading .circle:after, .loading .circle:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .loading .circle:after {
+    box-shadow: 2px 2px 5px #ddd;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid white; /* Add this */
+}
+
+  
+  /* Shadow */
+  .circle:before {
+    left: 40%;
+    top: 40%;
+    position: absolute;
+  }
+  
+  .loading .first {
+    z-index:2;
+    animation-name: pulse;
+  }
+  
+  .loading .second {
+    z-index:3;
+    animation-name: pulse2;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0;
+      margin-top: -0.25em;
+      margin-left: -0.25em;
+      width: 0.5em;
+      height: 0.5em;
+    }
+    
+    10% {
+      opacity: 1;
+    }
+    
+    100% {
+      margin-top: -7.5em;
+      margin-left: -7.5em;
+      opacity: 1;
+      height: 15em;
+      width: 15em;
+    }
+  }
+  
+  @keyframes pulse2 {
+    0%, 25% {
+      opacity: 0;
+      margin-top: -0.25em;
+      margin-left: -0.25em;
+      width: 0.5em;
+      height: 0.5em;
+    }
+    
+    35% {
+      opacity: 1;
+    }
+    
+    100% {
+      margin-top: -7.5em;
+      margin-left: -7.5em;
+      opacity: 1;
+      height: 15em;
+      width: 15em;
+    }
+  }
