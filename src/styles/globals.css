@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (orientation: portrait) {
+  .rotate-device {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+@media (orientation: landscape) {
+  .rotate-device {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .swipe-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+  }
+}
