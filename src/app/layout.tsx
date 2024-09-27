@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="screen-orientation" content="landscape" />
-        <title>My 3D Portfolio</title>
+        <title>Anand Gandhi | Portfolio</title>
       </head>
       <body>
         <RotateDevice />

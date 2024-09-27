@@ -4,15 +4,15 @@ import React from 'react';
 import { useGesture } from '@use-gesture/react';
 import { useSpring, animated } from '@react-spring/web';
 
-const SwipeUp: React.FC = () => {
+const SwipeUp: React.FC<{ onSwipeUp: () => void }> = ({ onSwipeUp }) => {
   const [{ y }, api] = useSpring(() => ({ y: 0 }));
 
   const bind = useGesture({
     onDrag: ({ down, movement: [, my] }) => {
       api.start({ y: down ? my : 0 });
       if (!down && my < -100) {
-        // Trigger your scroll animation or any other action here
-        console.log('Swipe Up Detected');
+        // Trigger the onSwipeUp action
+        onSwipeUp();
       }
     },
   });

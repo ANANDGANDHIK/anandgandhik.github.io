@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic';
 
-const Canvas = dynamic(() => import('../components/Canvas'), { ssr: false });
+const ModelCanvas = dynamic(() => import('../components/ModelCanvas'), { ssr: false });
 
 export default function HomePage() {
   return (
     <main className="h-screen w-screen">
-      <Canvas />
+      <ModelCanvas />
     </main>
   );
 }
